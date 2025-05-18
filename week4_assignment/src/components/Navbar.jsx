@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <Container>
       <Page to="/">홈</Page>
-      <Page to="/my">내 계정</Page>
+      <Page to="/mypage">내 계정</Page>
     </Container>
   );
 }
