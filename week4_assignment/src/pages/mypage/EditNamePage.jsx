@@ -9,7 +9,7 @@ const EditNamePage = () => {
   const handleSave = () => {
     if (input.trim() === "") return;
     localStorage.setItem("name", input.trim());
-    navigate("/my");
+    navigate("/mypage");
   };
 
   return (
