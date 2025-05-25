@@ -56,3 +56,14 @@ export const ImageCard = styled.img`
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 `;
+
+export const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .title-icon {
+    width: 28px;
+    height: 28px;
+  }
+`;

@@ -46,3 +46,15 @@ export const ProjectCard = styled.div`
     }
   }
 `;
+
+export const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .title-icon {
+    width: 28px;
+    height: 28px;
+  }
+`;
+

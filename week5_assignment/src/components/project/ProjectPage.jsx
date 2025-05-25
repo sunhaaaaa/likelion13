@@ -1,21 +1,22 @@
-import Header from "../components/header/Header";
 import {
   Container,
   TitleSection,
   Title,
   Subtitle,
   Grid,
-  ProjectCard
+  ProjectCard,
+  TitleWrapper
 } from ".//Project.styles";
 
-import img1 from "../assets/images/project/댕댕.png";
-import img2 from "../assets/images/project/트래.png";
-import img3 from "../assets/images/project/아이랑.png";
-import img4 from "../assets/images/project/톡식.png";
-import img5 from "../assets/images/project/김비서.png";
-import img6 from "../assets/images/project/꼬북.png";
-import img7 from "../assets/images/project/프레임.png";
-import img8 from "../assets/images/project/티피오.png";
+import img1 from "../../assets/images/project/댕댕.png";
+import img2 from "../../assets/images/project/트래.png";
+import img3 from "../../assets/images/project/아이랑.png";
+import img4 from "../../assets/images/project/톡식.png";
+import img5 from "../../assets/images/project/김비서.png";
+import img6 from "../../assets/images/project/꼬북.png";
+import img7 from "../../assets/images/project/프레임.png";
+import img8 from "../../assets/images/project/티피오.png";
+import pinkIcon from "../../assets/images/pink.svg";
 
 const projectList = [
   { image: img1, title: "댕댕일기" },
@@ -31,10 +32,12 @@ const projectList = [
 export default function ProjectPage() {
   return (
     <>
-      <Header />
       <Container>
         <TitleSection>
-          <Title>Project</Title>
+        <TitleWrapper>
+            <img src={pinkIcon} alt="Project Icon" className="title-icon" />
+            <Title>Project</Title>
+          </TitleWrapper>
           <Subtitle>
             2025 서경대학교 아이디어톤의 프로젝트 파일입니다. 클릭하여 상세한 정보를 확인하세요!<br />
             모아 놓으니 더 예쁘네요. 다들 너무 수고하셨습니다!
