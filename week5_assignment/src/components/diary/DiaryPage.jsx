@@ -1,9 +1,3 @@
-import Header from "../components/header/Header";
-
-import photo1 from "../assets/images/diary1.png";
-import photo2 from "../assets/images/diary2.png";
-import photo3 from "../assets/images/diary3.png";
-
 import {
   Wrapper,
   IntroSection,
@@ -12,16 +6,25 @@ import {
   Button,
   Canvas,
   Note,
-  ImageCard
-} from "./Diary.styles"; 
+  ImageCard,
+  TitleWrapper
+
+} from "./Diary.styles";
+
+import photo1 from "../../assets/images/diary1.png";
+import photo2 from "../../assets/images/diary2.png";
+import photo3 from "../../assets/images/diary3.png";
+import greenIcon from "../../assets/images/green.svg";
 
 export default function DiaryPage() {
   return (
     <>
-      <Header />
       <Wrapper>
         <IntroSection>
+        <TitleWrapper>
+          <img src={greenIcon} alt="Diary Icon" className="title-icon" />
           <Title>Diary</Title>
+        </TitleWrapper>
           <Description>
             2025 서경대학교 아이디어톤의 소감을 적는 곳입니다. 여러분이 느꼈던 모든 것을 적어주세요!
             이미지를 올리셔도 됩니다. 배치도 자유롭게 설정할 수 있어요! 방명록이라고 편하게 생각 부탁함~
