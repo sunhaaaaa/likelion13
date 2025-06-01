@@ -14,7 +14,7 @@ export const product = [
       name: "에어 포스 1 07 M - 화이트 / CW2288-111",
       price: "139,000",
       image: img1,
-      Watch: "415명이 보는 중"
+      watch: "415"
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export const product = [
       name: "샨티 슬라이드 Black",
       price: "93,900",
       image: img2,
-      Watch: "543명이 보는 중"
+      watch: "543"
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ export const product = [
       name: "OORIGINAL BLACK - 조리 블랙",
       price: "65,550",
       image: img3,
-      Watch: "860명이 보는 중"
+      watch: "860"
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ export const product = [
       name: "삼바 OG - 화이트:블랙 / B75806",
       price: "133,990",
       image: img4,
-      Watch: "495명이 보는 중"
+      watch: "495"
     },
     {
       id: 5,
@@ -46,7 +46,7 @@ export const product = [
       name: "에어 포스 1 07 M - 블랙 / CW2288-001",
       price: "139,000",
       image: img5,
-      Watch: "210명이 보는 중"
+      watch: "210"
     },
     {
       id: 6,
@@ -54,7 +54,7 @@ export const product = [
       name: "스피드캣 OG - 블랙:모브 미스트 / 398846-09",
       price: "139,000",
       image: img6,
-      Watch: "135명이 보는 중"
+      watch: "135"
     },
     {
       id: 7,
@@ -62,7 +62,7 @@ export const product = [
       name: "810s 마르케 모디 Charcoal",
       price: "97,700",
       image: img7,
-      Watch: "301명이 보는 중"
+      watch: "301"
     },
     {
       id: 8,
@@ -70,7 +70,7 @@ export const product = [
       name: "스피드캣 OG - 하우트커피:프로스트아이보리 / 398846-31",
       price: "139,000",
       image: img8,
-      Watch: "93명이 보는 중"
+      watch: "93"
     }
   ];
   

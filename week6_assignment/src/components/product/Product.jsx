@@ -9,7 +9,7 @@ import {
   WatchText
 } from "./Product.styles";
 
-export default function Product({ brand, name, price, image, Watch }) {
+export default function Product({ brand, name, price, image, watch }) {
   return (
     <Card>
       <Img src={image} alt={name} />
@@ -17,7 +17,7 @@ export default function Product({ brand, name, price, image, Watch }) {
         <Brand>{brand}</Brand>
         <Name>{name}</Name>
         <Price>{price}원</Price>
-        <WatchText>{Watch}</WatchText>
+        <WatchText>{watch}명이 보는 중</WatchText>
       </Info>
     </Card>
   );
