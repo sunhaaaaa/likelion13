@@ -1,0 +1,22 @@
+{
+  "name": "login_register_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "init": "npm install && cd ./client && npm install && cd .. && echo \"\n------------------\nDone! Type 'npm run start'!\n\n\"",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node index.js",
+    "client": "cd client && npm run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7",
+    "uuid": "^11.1.0"
+  }
+}
