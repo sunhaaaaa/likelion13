@@ -6,10 +6,10 @@ import {
   Brand,
   Name,
   Price,
-  WatchText
+  RatingText
 } from "./Product.styles";
 
-export default function Product({ brand, name, price, image, watch }) {
+export default function Product({ brand, name, price, image, rating, reviews }) {
   return (
     <Card>
       <Img src={image} alt={name} />
@@ -17,7 +17,7 @@ export default function Product({ brand, name, price, image, watch }) {
         <Brand>{brand}</Brand>
         <Name>{name}</Name>
         <Price>{price}원</Price>
-        <WatchText>{watch}명이 보는 중</WatchText>
+        <RatingText>⭐ {rating}점 ({reviews}명 리뷰)</RatingText>
       </Info>
     </Card>
   );
