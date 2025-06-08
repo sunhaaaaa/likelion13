@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Product from "../components/product/Product";
+import axios from "axios";
 
 export default function HomePage() {
   const [ascending, setAscending] = useState(true);
@@ -8,15 +9,13 @@ export default function HomePage() {
   const [sortLabel, setSortLabel] = useState("가격순");
   const [productList, setProductList] = useState([]);
 
-  // 🔹 API에서 상품 데이터 불러오기
   useEffect(() => {
-    fetch("http://localhost:3000/clothes")
-      .then((res) => res.json())
-      .then((data) => setProductList(data))
+    axios.get("http://localhost:3000/clothes")
+      .then((res) => setProductList(res.data)) 
       .catch((err) => console.error("API 호출 실패:", err));
   }, []);
+  
 
-  // 🔹 정렬된 배열 만들기
   const sorted = [...productList].sort((a, b) =>
     ascending ? a.price - b.price : b.price - a.price
   );
@@ -63,7 +62,6 @@ export default function HomePage() {
   );
 }
 
-// styled-components 아래 그대로 유지
 const Wrapper = styled.div`
   padding: 40px;
 `;
