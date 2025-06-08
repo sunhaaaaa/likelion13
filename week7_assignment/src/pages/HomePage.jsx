@@ -1,25 +1,34 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Product from "../components/product/Product";
 import axios from "axios";
+import Product from "../components/product/Product";
 
 export default function HomePage() {
-  const [ascending, setAscending] = useState(true);
-  const [open, setOpen] = useState(false);
-  const [sortLabel, setSortLabel] = useState("가격순");
   const [productList, setProductList] = useState([]);
+  const [sortBy, setSortBy] = useState("price_asc");
+  const [sortLabel, setSortLabel] = useState("낮은 가격순");
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     axios.get("http://localhost:3000/clothes")
-      .then((res) => setProductList(res.data)) 
+      .then((res) => setProductList(res.data))
       .catch((err) => console.error("API 호출 실패:", err));
   }, []);
-  
 
-  const sorted = [...productList].sort((a, b) =>
-    ascending ? a.price - b.price : b.price - a.price
-  );
-  
+  const sorted = [...productList].sort((a, b) => {
+    switch (sortBy) {
+      case "price_asc":
+        return a.price - b.price;
+      case "price_desc":
+        return b.price - a.price;
+      case "reviews_desc":
+        return b.reviews - a.reviews;
+      case "rating_desc":
+        return b.rating - a.rating;
+      default:
+        return 0;
+    }
+  });
 
   return (
     <Wrapper>
@@ -30,23 +39,33 @@ export default function HomePage() {
           </DropdownButton>
           {open && (
             <DropdownMenu>
-              <MenuItem
-                onClick={() => {
-                  setAscending(true);
-                  setSortLabel("낮은 가격순");
-                  setOpen(false);
-                }}
-              >
+              <MenuItem onClick={() => {
+                setSortBy("price_asc");
+                setSortLabel("낮은 가격순");
+                setOpen(false);
+              }}>
                 낮은 가격순
               </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  setAscending(false);
-                  setSortLabel("높은 가격순");
-                  setOpen(false);
-                }}
-              >
+              <MenuItem onClick={() => {
+                setSortBy("price_desc");
+                setSortLabel("높은 가격순");
+                setOpen(false);
+              }}>
                 높은 가격순
+              </MenuItem>
+              <MenuItem onClick={() => {
+                setSortBy("reviews_desc");
+                setSortLabel("리뷰 많은 순");
+                setOpen(false);
+              }}>
+                리뷰 많은 순
+              </MenuItem>
+              <MenuItem onClick={() => {
+                setSortBy("rating_desc");
+                setSortLabel("평점 높은 순");
+                setOpen(false);
+              }}>
+                평점 높은 순
               </MenuItem>
             </DropdownMenu>
           )}
@@ -90,7 +109,7 @@ const DropdownMenu = styled.ul`
   position: absolute;
   background: #fff;
   border: 1px solid #ccc;
-  width: 140px;
+  width: 160px;
   margin-top: 8px;
   border-radius: 6px;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.08);

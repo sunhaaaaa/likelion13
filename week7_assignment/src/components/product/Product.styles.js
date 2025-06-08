@@ -35,8 +35,8 @@ export const Price = styled.p`
   color: #333;
 `;
 
-export const WatchText = styled.p`
-  font-size: 12px;
-  color: #999;
+export const RatingText = styled.p`
+  font-size: 13px;
+  color: #555;
   margin-top: 4px;
 `;
